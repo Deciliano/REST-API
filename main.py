@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 from flask import Flask, jsonify, request
 from service import ProductService
+import logging
 
 app = Flask(__name__)
 product_service = ProductService()
@@ -14,15 +15,8 @@ def get_products():
 @app.route('/products/<int:id>', methods=['GET'])
 def get_product(id):
     product = product_service.get_product(id)
-    if product:
-        product_one = product.__dict__()
-        return jsonify(product_one)
-    else:
-        return jsonify(
-            {
-                'error:' 'Product not found'
-            }
-        ), 404
+    product_one = product.__dict__()
+    return jsonify(product_one)
 
 @app.route('/products', methods=['POST'])
 def add_product():
