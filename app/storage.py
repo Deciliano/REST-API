@@ -1,6 +1,6 @@
 import sqlite3
 import logging
-from model import Product
+from app.model import Product
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(levelname)s -  %(message)s")

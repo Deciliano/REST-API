@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 from flask import Flask, jsonify, request
-from service import ProductService
+from app.service import ProductService
 import logging
 
 app = Flask(__name__)

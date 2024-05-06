@@ -1,5 +1,5 @@
 from flask import abort
-from storage import ProductStorage
+from app.storage import ProductStorage
 import logging
 
 class ProductService:
